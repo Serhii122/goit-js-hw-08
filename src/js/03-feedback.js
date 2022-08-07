@@ -19,13 +19,13 @@ function inputTextArea(e) {
   
 }
 
-function onSubmitButtonClick(ev) {
+function onSubmitButtonClick(e) {
   if (refs.textArea.value === '' || refs.emailArea.value === '') {
     return alert('Please fill in all the fields!');
   }
-  ev.preventDefault();
+  e.preventDefault();
   console.log(JSON.parse(localStorage.getItem(SAVE_USER_DATA_KEY)));
-  ev.currentTarget.reset();
+  e.currentTarget.reset();
   localStorage.removeItem(SAVE_USER_DATA_KEY);
   userData = {};
 }
